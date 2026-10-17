@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country Explorer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>🌍 Country Explorer</h1>
+      <nav>
+        <button class="nav-btn active" id="explore-nav">Explore</button>
+        <button class="nav-btn" id="quiz-nav">Quiz</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- explore page -->
+    <section id="explore-view">
+      <div class="controls">
+        <input type="text" id="search-input" placeholder="🔍 Search for a country...">
+
+        <div class="selects">
+          <select id="region-select">
+            <option value="">All Regions</option>
+            <option>Africa</option>
+            <option>Americas</option>
+            <option>Asia</option>
+            <option>Europe</option>
+            <option>Oceania</option>
+            <option>Antarctic</option>
+          </select>
+
+          <select id="sort-select">
+            <option value="name">Sort: Name (A-Z)</option>
+            <option value="population">Sort: Population</option>
+            <option value="area">Sort: Area</option>
+          </select>
+
+          <button id="random-btn">🎲 Random</button>
+        </div>
+      </div>
+
+      <p id="count"></p>
+      <div id="grid"></div>
+    </section>
+
+    <!-- country details page -->
+    <section id="details-view" class="hidden">
+      <button id="back-btn">← Back</button>
+
+      <div class="details">
+        <img id="d-flag" src="" alt="">
+
+        <div class="details-info">
+          <h2 id="d-name"></h2>
+          <p id="d-official"></p>
+
+          <div class="info-grid">
+            <p><b>Native Name:</b> <span id="d-native"></span></p>
+            <p><b>Population:</b> <span id="d-population"></span></p>
+            <p><b>Region:</b> <span id="d-region"></span></p>
+            <p><b>Sub Region:</b> <span id="d-subregion"></span></p>
+            <p><b>Capital:</b> <span id="d-capital"></span></p>
+            <p><b>Area:</b> <span id="d-area"></span></p>
+            <p><b>Languages:</b> <span id="d-languages"></span></p>
+            <p><b>Currencies:</b> <span id="d-currencies"></span></p>
+            <p><b>Landlocked:</b> <span id="d-landlocked"></span></p>
+          </div>
+
+          <div class="borders">
+            <b>Border Countries:</b>
+            <div id="d-borders"></div>
+          </div>
+
+          <a id="d-map" target="_blank">📍 View on Google Maps</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- quiz page -->
+    <section id="quiz-view" class="hidden">
+      <div id="quiz-start" class="quiz-box">
+        <h2>Test your knowledge 🧠</h2>
+        <p>10 questions. Pick a mode:</p>
+        <div class="mode-buttons">
+          <button class="mode-btn" id="flag-mode-btn">
+            <span class="mode-icon">🏳️</span>
+            Guess the Flag
+            <small id="flag-best"></small>
+          </button>
+          <button class="mode-btn" id="capital-mode-btn">
+            <span class="mode-icon">🏛️</span>
+            Guess the Capital
+            <small id="capital-best"></small>
+          </button>
+        </div>
+      </div>
+
+      <div id="quiz-question" class="quiz-box hidden">
+        <div class="quiz-top">
+          <span id="q-number"></span>
+          <span id="q-score"></span>
+          <span id="q-streak"></span>
+        </div>
+        <div class="progress"><div id="progress-fill"></div></div>
+
+        <img id="q-flag" src="" alt="flag">
+        <h2 id="q-text"></h2>
+
+        <div id="q-options"></div>
+        <button id="next-btn" class="hidden">Next →</button>
+      </div>
+
+      <div id="quiz-end" class="quiz-box hidden">
+        <h2 id="end-title"></h2>
+        <p id="end-score"></p>
+        <p id="end-best"></p>
+        <div class="end-buttons">
+          <button id="again-btn">Play Again</button>
+          <button id="change-mode-btn">Change Mode</button>
+        </div>
+      </div>
+    </section>
+
+    <p id="message"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
